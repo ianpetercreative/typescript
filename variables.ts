@@ -22,3 +22,23 @@ gameOver = true;
 let tvShow = "The Office";
 
 // Typescript infers the type of the value based on the first instance of that variable. 
+
+
+let thing: any = "hello"; 
+thing = 27;
+thing = true; 
+thing(); 
+thing.toUpperCase(); 
+
+
+const movies = ['deadpool', 'deadpool 2', 'deadpool and wolverine'];
+let foundMovie: string; 
+// let foundMovie; By not declaring a type on this, it initializes to 'any'. It can cause problems later on. 
+for(let movie of movies) {
+    if (movie === 'deadpool and wolverine') {
+        foundMovie = 'deadpool and wolverine'; 
+    }
+}
+
+// foundMovie();
+// foundMovie = 1; 
