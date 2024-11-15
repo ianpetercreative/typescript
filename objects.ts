@@ -18,7 +18,7 @@ function randomCoordinate(): {x: number, y: number}{
 }
 
 // TS doesn't like this
-printName({first: "Mick", last: "Jagger", age: 34})
+// printName({first: "Mick", last: "Jagger", age: 34})
 
 // TS is fine with this:
 const singer = {first: "Mick", last: "Jagger", age: 34, isAlive: true}
@@ -38,7 +38,37 @@ function randomCoordinate2(point: Point): Point {
 }
 
 function doublePoint(point: Point): Point {
-    return { x: point.x*, y: point.y*2 }
+    return { x: point.x * 2, y: point.y * 2 }
 }
 
+type Song = {
+    title: string,
+    artist: string, 
+    numStreams: number,
+    credits: {
+        producer: string,
+        writer: string
+    }
+};
 
+function printSong(song: Song): void {
+    console.log(`${song.title} - ${song.artist}`)
+}
+
+function calculatePayout(song: Song): number {
+    return song.numStreams * .0033;
+}
+
+const mySong: Song = {
+    title: "Saturn",
+    artist: "Sleeping At Last",
+    numStreams: 1234567890,
+    credits: {
+        producer: "Someone cool",
+        writer: "A Writer"
+    }
+}
+
+const earnings = calculatePayout(mySong);
+console.log(earnings)
+printSong(mySong);
