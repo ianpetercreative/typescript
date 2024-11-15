@@ -32,3 +32,26 @@ const add = (x: number, y: number): number => {
     return x+y; 
 }
 
+const colors = ["red", "blue", "green"];
+
+// The type below is inferred because of the colors context 
+colors.map(color => {
+    return color.toUpperCase()
+})
+
+function printTwice(mes: string): void {
+    console.log(mes)
+    console.log(mes)
+}
+// Void indicates that the function does not return any value 
+
+
+function makeError(mes: string): never {
+    throw new Error(mes);
+}
+
+function gameLoop(){
+    while(true){
+        console.log("GAME LOOP RUNNING")
+    }
+}
