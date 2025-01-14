@@ -21,3 +21,25 @@ const goodRes: HTTPResponse = [200, "OK"]
 // Tuples just have very specific applications where you're working with
 // simple data. Ex. RGB Numbers. It's always 3 numbers in a specific order.
 
+// Typescript automatically assigns numerical value, but we can customize those values
+enum OrderStatus {
+    PENDING,
+    SHIPPED,
+    DELIVERED,
+    RETURNED
+}
+
+const myStatus = OrderStatus.DELIVERED;
+
+function isDelivered(status: OrderStatus){
+    return status === OrderStatus.DELIVERED
+}
+
+isDelivered(OrderStatus.RETURNED)
+
+enum ArrowKeys {
+    UP = 'up',
+    DOWN = 'down',
+    LEFT = 'left',
+    RIGHT = 'right'
+}
